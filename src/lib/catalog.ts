@@ -3,7 +3,7 @@ import { parseFilename, Product } from "@/config/store";
 const CLOUD  = process.env.CLOUDINARY_CLOUD_NAME || "djs5hqpyz";
 const KEY    = process.env.CLOUDINARY_API_KEY    || "813582114723111";
 const SECRET = process.env.CLOUDINARY_API_SECRET || "";
-const FOLDER = "Catálogo";
+const FOLDER = "catalog";
 
 export function cloudinaryUrl(publicId: string): string {
   return `https://res.cloudinary.com/${CLOUD}/image/upload/q_auto,f_auto,w_400/${publicId}`;
