@@ -17,10 +17,9 @@ export const STORE = {
 
 // ── Métodos de pago activos ────────────────────────────────
 export const PAYMENTS = [
-  export const PAYMENTS = [
   { icon: "💳", label: "Nequi · 3223815323" },
   { icon: "🏦", label: "Bancolombia · 25356116201" },
-  ];
+];
 
 // ── Categorías y precios por defecto ──────────────────────
 // El precio se puede incluir en el nombre del archivo:
