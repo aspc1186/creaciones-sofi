@@ -129,11 +129,29 @@ export default async function Home() {
               ))}
             </div>
           </div>
-          <div style={{display:"flex",justifyContent:"center"}}>
-            <div style={{position:"relative",width:"min(320px,84vw)",height:"min(380px,96vw)"}}>
-              <div style={{position:"absolute",width:"65%",height:"72%",top:"2%",left:"2%",borderRadius:22,overflow:"hidden",boxShadow:"0 16px 48px rgba(196,0,106,.22)",background:"#fff",zIndex:1,transform:"rotate(-5deg)",opacity:.8}}><div style={{width:"100%",height:"100%",background:"linear-gradient(135deg,#ffd6eb,#ff2d87)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"4.5rem"}}>👘</div></div>
-              <div style={{position:"absolute",width:"65%",height:"72%",top:"2%",right:"2%",borderRadius:22,overflow:"hidden",boxShadow:"0 16px 48px rgba(196,0,106,.22)",background:"#fff",zIndex:2,transform:"rotate(5deg)",opacity:.8}}><div style={{width:"100%",height:"100%",background:"linear-gradient(135deg,#ffd6eb,#ff2d87)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"4.5rem"}}>👙</div></div>
-              <div style={{position:"absolute",width:"78%",height:"85%",top:"8%",left:"11%",borderRadius:22,overflow:"hidden",boxShadow:"0 16px 48px rgba(196,0,106,.22)",background:"#fff",zIndex:3}}><div style={{width:"100%",height:"100%",background:"linear-gradient(135deg,#ffd6eb,#ff2d87)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"4.5rem"}}>👗</div></div>
+          <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+            <div style={{
+              background:"linear-gradient(135deg,#ff80ab,#f48fb1)",
+              borderRadius:24,
+              padding:16,
+              boxShadow:"0 20px 60px rgba(255,100,150,0.35)",
+              maxWidth:"min(340px,84vw)",
+              width:"100%",
+            }}>
+              <video
+                src="/video_creaciones_sofi.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  width:"100%",
+                  borderRadius:16,
+                  display:"block",
+                  objectFit:"cover",
+                  maxHeight:"420px",
+                }}
+              />
             </div>
           </div>
         </div>
