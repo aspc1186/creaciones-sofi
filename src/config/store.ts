@@ -16,10 +16,10 @@ export const STORE = {
 
 // ── Métodos de pago activos ────────────────────────────────
 export const PAYMENTS = [
-  { icon: "💳", label: "Nequi  · 3223815323" },
-  { icon: "🏦", label: "Llave Bancolombia · 3223815323" },
-  { icon: "📦", label: "Contraentrega" },
-];
+  export const PAYMENTS = [
+  { icon: "💳", label: "Nequi · 3223815323" },
+  { icon: "🏦", label: "Bancolombia · 25356116201" },
+  ];
 
 // ── Categorías y precios por defecto ──────────────────────
 // El precio se puede incluir en el nombre del archivo:
@@ -27,6 +27,7 @@ export const PAYMENTS = [
 // Si no se incluye usa el precio de la categoría.
 export const CATEGORIES: Category[] = [
   { id: "camisetas-dama",   label: "Camisetas Dama",     price: 25000,  kw: ["camiseta","camisetas-dama","camisetas_dama"] },
+  { id: "blusas-dama", label: "Blusas Dama", price: 30000, kw: ["blusa","blusas","blusa-dama","blusas-dama"] },
   { id: "bodies-dama",      label: "Bodies Dama",        price: 28000,  kw: ["body","bodies","bodysuit","body-dama"] },
   { id: "conjuntos-dama",   label: "Conjuntos Dama",     price: 50000,  kw: ["conjunto","conjuntos-dama","conjuntos_dama"] },
   { id: "enterizos-dama",   label: "Enterizos Dama",     price: 45000,  kw: ["enterizo","jumpsuit","enterizos-dama"] },
