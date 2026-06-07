@@ -122,7 +122,7 @@ export default async function Home() {
               {activePayments.map(p=>(
                 <a key={p.icon} href={p.url} target="_blank" rel="noopener" style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.75)",border:"1px solid rgba(255,45,135,.25)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:700,color:"#ff2d87",textDecoration:"none",transition:"all .2s",cursor:"pointer",boxShadow:"0 2px 8px rgba(255,45,135,.15)"}}>{p.icon} {p.name}</a>
               ))}
-              <span style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.65)",border:"1px solid rgba(255,255,255,.8)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:600,color:"#4a3a42"}}>🚚 Envío por cuenta del cliente</span>
+              <span style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,200,0,.15)",border:"1px solid rgba(255,180,0,.4)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:700,color:"#b8860b"}}>⚠️ Costo de envío no incluido</span>
             </div>
             <div style={{display:"flex",gap:"1.8rem",paddingTop:"1.4rem",borderTop:"1px solid rgba(255,45,135,.14)"}}>
               {[{n:"500+",l:"Clientas felices"},{n:"100+",l:"Estilos únicos"},{n:"5★",l:"Calificación"}].map(s=>(
