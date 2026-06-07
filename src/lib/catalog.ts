@@ -1,19 +1,39 @@
-import fs from "fs";
-import path from "path";
 import { parseFilename, Product } from "@/config/store";
 
-// Lee la carpeta public/catalog en tiempo de build
-// Cada vez que agregues fotos y hagas deploy, la lista se actualiza
-export function getCatalogProducts(): Product[] {
-  const dir = path.join(process.cwd(), "public", "catalog");
+const CLOUD  = process.env.CLOUDINARY_CLOUD_NAME || "djs5hqpyz";
+const KEY    = process.env.CLOUDINARY_API_KEY    || "813582114723111";
+const SECRET = process.env.CLOUDINARY_API_SECRET || "";
+const FOLDER = "Catálogo";
 
-  // Si la carpeta no existe, devolver array vacío
-  if (!fs.existsSync(dir)) return [];
+export function cloudinaryUrl(publicId: string): string {
+  return `https://res.cloudinary.com/${CLOUD}/image/upload/q_auto,f_auto,w_400/${publicId}`;
+}
 
-  const files = fs
-    .readdirSync(dir)
-    .filter((f) => /\.(jpe?g|png|webp|gif|avif)$/i.test(f))
-    .sort((a, b) => a.localeCompare(b));
+export async function getCatalogProducts(): Promise<Product[]> {
+  try {
+    const auth = Buffer.from(`${KEY}:${SECRET}`).toString("base64");
+    const url  = `https://api.cloudinary.com/v1_1/${CLOUD}/resources/image?prefix=${encodeURIComponent(FOLDER + "/")}&max_results=500&type=upload`;
 
-  return files.map((filename, idx) => parseFilename(filename, idx));
+    const res = await fetch(url, {
+      headers: { Authorization: `Basic ${auth}` },
+      next: { revalidate: 3600 },
+    });
+
+    if (!res.ok) return [];
+
+    const data = await res.json();
+    const resources: { public_id: string }[] = data.resources || [];
+
+    return resources
+      .map((r, idx) => {
+        const filename = r.public_id.split("/").pop() || "";
+        const product  = parseFilename(filename, idx);
+        return { ...product, file: cloudinaryUrl(r.public_id) };
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+  } catch (e) {
+    console.error("getCatalogProducts error:", e);
+    return [];
+  }
 }
