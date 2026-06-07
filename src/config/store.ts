@@ -6,6 +6,7 @@
 export const STORE = {
   name:        "Creaciones Sofi",
   tagline:     "Moda femenina con estilo y elegancia",
+  mayorista:   "Distribuidor mayorista de ropa femenina",
   description: "Encuentra las últimas tendencias en moda femenina y luce espectacular en cada ocasión.",
   location:    "Medellín, Antioquia, Colombia",
   whatsapp:    "573223815323",
