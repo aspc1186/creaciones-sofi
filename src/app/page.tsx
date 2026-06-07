@@ -120,8 +120,9 @@ export default async function Home() {
             </div>
             <div style={{display:"flex",flexWrap:"wrap",gap:".4rem",marginBottom:"1.5rem"}}>
               {activePayments.map(p=>(
-                <span key={p.id} style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.65)",border:"1px solid rgba(255,255,255,.8)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:600,color:"#4a3a42"}}>{p.icon} {p.label}</span>
+                <span key={p.icon} style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.65)",border:"1px solid rgba(255,255,255,.8)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:600,color:"#4a3a42"}}>{p.icon} {p.name}</span>
               ))}
+              <span style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.65)",border:"1px solid rgba(255,255,255,.8)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:600,color:"#4a3a42"}}>🚚 Envío por cuenta del cliente</span>
             </div>
             <div style={{display:"flex",gap:"1.8rem",paddingTop:"1.4rem",borderTop:"1px solid rgba(255,45,135,.14)"}}>
               {[{n:"500+",l:"Clientas felices"},{n:"100+",l:"Estilos únicos"},{n:"5★",l:"Calificación"}].map(s=>(
