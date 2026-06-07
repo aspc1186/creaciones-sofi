@@ -120,7 +120,7 @@ export default async function Home() {
             </div>
             <div style={{display:"flex",flexWrap:"wrap",gap:".4rem",marginBottom:"1.5rem"}}>
               {activePayments.map(p=>(
-                <span key={p.icon} style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.65)",border:"1px solid rgba(255,255,255,.8)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:600,color:"#4a3a42"}}>{p.icon} {p.name}</span>
+                <a key={p.icon} href={p.url} target="_blank" rel="noopener" style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.75)",border:"1px solid rgba(255,45,135,.25)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:700,color:"#ff2d87",textDecoration:"none",transition:"all .2s",cursor:"pointer",boxShadow:"0 2px 8px rgba(255,45,135,.15)"}}>{p.icon} {p.name}</a>
               ))}
               <span style={{display:"inline-flex",alignItems:"center",gap:".3rem",background:"rgba(255,255,255,.65)",border:"1px solid rgba(255,255,255,.8)",borderRadius:"50px",padding:".26rem .72rem",fontSize:".7rem",fontWeight:600,color:"#4a3a42"}}>🚚 Envío por cuenta del cliente</span>
             </div>
